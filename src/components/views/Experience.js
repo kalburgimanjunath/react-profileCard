@@ -1,4 +1,7 @@
 import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 export default function Experience() {
   const experience = [
     {
@@ -91,14 +94,40 @@ Rotary international website [php, smarty, css, html, javascript][bazil3170.org]
 Kcc bank website [php, css, html, javascript][kccbank.org].`,
     },
   ];
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
       <h1 className="header">Experience</h1>
+      <button onClick={handleShow}>Edit</button>
       <ul>
         {experience.map((item) => {
           return <li>{item.company}</li>;
         })}
       </ul>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Experiences</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {experience.map((item) => {
+            return <li>{item.company}</li>;
+          })}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Understood</Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

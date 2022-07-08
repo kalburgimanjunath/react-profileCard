@@ -9,6 +9,7 @@ import Interests from './views/Interests';
 import JobPreferences from './views/JobPreferences';
 import Summary from './views/Summary';
 import Certifications from './views/Certifications';
+import MyModal from './views/MyModal';
 export {
   Header,
   Footer,
@@ -21,4 +22,5 @@ export {
   JobPreferences,
   Summary,
   Certifications,
+  MyModal,
 };
