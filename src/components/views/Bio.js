@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from './Avatar';
 export default function Bio() {
   const user = {
@@ -12,9 +12,14 @@ export default function Bio() {
     linkedin: 'kalburgimanjunath',
     github: 'kalburgimanjunath',
   };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div style={{ padding: '20px' }}>
       <div style={{ justifyContent: 'left' }}>
+        <button>Edit</button>
         <Avatar user={user} />
       </div>
     </div>
