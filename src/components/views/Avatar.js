@@ -6,7 +6,7 @@ export default function Avatar({ user }) {
     <>
       <div className="rounded_image">
         <img
-          src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+          src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
           width={200}
           height={200}
         />

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Avatar from './Avatar';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 export default function Bio() {
   const user = {
     id: 1,
@@ -19,9 +21,29 @@ export default function Bio() {
   return (
     <div style={{ padding: '20px' }}>
       <div style={{ justifyContent: 'left' }}>
-        <button>Edit</button>
+        <button onClick={handleShow}>Edit</button>
         <Avatar user={user} />
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          I will not close if you click outside me. Don't even try to press
+          escape key.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Understood</Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

@@ -12,8 +12,8 @@ Lead design, development & mentoring focus for a multi-disciplinary team.`,
     <div>
       <h1 className="header">Summary</h1>
       <ul>
-        {summary.map((item) => {
-          return <li>{item}</li>;
+        {summary.map((item, index) => {
+          return <li key={index}>{item}</li>;
         })}
       </ul>
     </div>
