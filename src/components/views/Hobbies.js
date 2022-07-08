@@ -37,9 +37,13 @@ export default function Hobbies() {
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Badge bg="secondary" pill={true}>
-            {item}
-          </Badge>
+          {hobbies.map((item) => {
+            return (
+              <Badge bg="secondary" pill={true}>
+                {item}
+              </Badge>
+            );
+          })}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
